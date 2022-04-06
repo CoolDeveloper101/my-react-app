@@ -1,6 +1,6 @@
 // import logo from './logo.svg'
 import './App.css'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 function App() {
   return (
@@ -13,8 +13,10 @@ function App() {
         }}
       >
         <Link to="/invoices">Invoices</Link> |{" "}
-        <Link to="/expenses">Expenses</Link>
+        <Link to="/expenses">Expenses</Link> | {" "}
+        <Link to="/about">About</Link>
       </nav>
+      <Outlet />
     </div>
   )
 }
