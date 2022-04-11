@@ -1,3 +1,6 @@
+/**
+ * The invoices page
+ */
 export default function Invoices() {
 	return (
 		<main style={{ padding: "1rem 0" }}>

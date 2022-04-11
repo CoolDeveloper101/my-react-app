@@ -18,7 +18,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="/" element={<Home />} />
-          <Route path="expense" element={<Navigate to="/expenses" />} />
+          <Route path="expense" element={<Navigate to="/expenses" replace />} />
           <Route path="expenses" element={<Expenses />} />
           <Route path="invoices" element={<Invoices />} />
         </Route>

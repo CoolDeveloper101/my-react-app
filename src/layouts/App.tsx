@@ -2,6 +2,10 @@
 import './App.css'
 import { Link, Outlet } from 'react-router-dom'
 
+/** 
+ * The main layout of the whole website.
+ * Ideally, it should change based on the authentication state of the user.
+ */
 function App() {
   return (
     <div className="App">
