@@ -4,9 +4,11 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import './index.css'
 import App from './layouts/App'
 import Home from './pages/home' 
-import Expenses from './pages/expenses'
-import Invoices from './pages/invoices'
+// import Expenses from './pages/expenses'
+// import Invoices from './pages/invoices'
 
+const Expenses = React.lazy(() => import("./pages/expenses"))
+const Invoices = React.lazy(() => import("./pages/invoices"))
 
 const root = ReactDOM.createRoot(
   document.getElementById('root')!
@@ -18,9 +20,16 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="/" element={<Home />} />
-          <Route path="expense" element={<Navigate to="/expenses" replace />} />
-          <Route path="expenses" element={<Expenses />} />
-          <Route path="invoices" element={<Invoices />} />
+          <Route path="expenses" element={
+            <React.Suspense fallback={<>...</>}>
+              <Expenses />
+            </React.Suspense>
+          } />
+          <Route path="invoices" element={
+            <React.Suspense fallback={<>...</>}>
+              <Invoices />
+            </React.Suspense>
+          } />
         </Route>
         <Route
           path="*"
