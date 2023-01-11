@@ -35,7 +35,7 @@ root.render(
           path="*"
           element={
             <main style={{ padding: "1rem" }}>
-              <p>Error! 404 Page Not Found</p>
+              <p>Error! 404 Page Not Found :(</p>
             </main>
           }
         />
